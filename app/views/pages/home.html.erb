@@ -1,9 +1,18 @@
 <%= turbo_stream_from dom_id(current_user) %>
-
-
-<h1>Chatroom</h1>
-<p>Welcome <%= current_user.username %>!</p>
-
-<%= render partial: "messages/chatbox", locals: { messages: @messages } %>
-
-<%= render partial: "messages/form", locals: { message: @message } %>
+<div class="container">
+  <div class="row chat-wrapper">
+    <div class="col-md-12">
+      <div class=text-center>
+        <h1 class="mt-5">Chatroom</h1>
+        <p>Welcome <%= current_user.username %>!</p>
+      </div>
+      <div class="card mt-3">
+        <div class="card-body">
+          <%= render partial: "messages/chatbox", locals: { messages: @messages } %>
+          <%= render partial: "messages/form", locals: { message: @message } %>
+        </div>
+      </div>
+    </div>
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+  </div>
+</div>

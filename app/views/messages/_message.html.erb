@@ -1,14 +1,11 @@
-<%# message_1 %>
 <%= turbo_frame_tag dom_id(message) do %>
-  <div data-user-id="<%= message.user.id %>">
-    <div>
+  <div class="message" data-user-id="<%= message.user.id %>">
+    <div class="messages">
+      <div class="message-item me">
+        <%= message.user.username %>
+      </div>
       <div>
-        <div>
-          <%= message.user.username %>
-        </div>
-        <div>
-          <%= message.created_at.strftime("%H:%M:%S") %>
-        </div>
+        <%= message.created_at.strftime("%H:%M") %>
       </div>
 
       <%= turbo_frame_tag [dom_id(message), "controls"] do %>
@@ -17,7 +14,7 @@
         <% end %>
       <% end %>
     </div>
-    <div>
+    <div class="bubble">
       <%= message.body %>
     </div>
   </div>
