@@ -258,6 +258,7 @@ DEPENDENCIES
   faker (~> 3.3)
   importmap-rails
   jbuilder
+  mini_racer
   puma (~> 5.0)
   rails (~> 7.0.8, >= 7.0.8.1)
   sassc-rails

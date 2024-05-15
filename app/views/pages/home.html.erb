@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= turbo_stream_from dom_id(current_user) %>
+
+
+<h1>Chatroom</h1>
+<p>Welcome <%= current_user.username %>!</p>
+
+<%= render partial: "messages/chatbox", locals: { messages: @messages } %>
+
+<%= render partial: "messages/form", locals: { message: @message } %>
