@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+User.create(username: "SKY1997",
+    email: "seyongski8@gmail.com",
+    password: "password", 
+    password_confirmation: "password") 
+User.create(username: "CAO",
+    email: "vietnameseCow@moo.com",
+    password: "password", 
+    password_confirmation: "password")
+User.create(username: "jane",
+    email: "jane@doe.com",
+    password: "password",
+    password_confirmation: "password")
+
+# Create 50 messages
+50.times do
+    Message.create(
+        body: Faker::Lorem.sentence(word_count: 10),
+        user_id: rand(1..3))
+end
