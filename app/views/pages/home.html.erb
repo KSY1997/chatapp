@@ -13,6 +13,8 @@
         </div>
       </div>
     </div>
-    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+    <% if user_signed_in? %>
+      <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
+    <% end %>
   </div>
 </div>
