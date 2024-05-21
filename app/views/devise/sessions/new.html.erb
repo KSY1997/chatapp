@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row w-100 mx-0 min-vh-100 d-flex align-items-center justify-content-center auth-page">
     <div class="col-md-8 col-xl-6 mx-auto">
-      <div class="card">
+      <div class="card bg-secondary-subtle border border-secondary-subtle rounded-3">
         <div class="row align-items-center">
           <div class="col">
             <div class="auth-form-wrapper px-4 py-5">
@@ -9,11 +9,11 @@
               <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                 <div class="mb-3">
                   <%= f.label :email, class: "form-label" %><br />
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control bg-secondary-subtle", placeholder: "Email" %>
                 </div>
                 <div class="mb-3">
                   <%= f.label :password, class: "form-label" %><br />
-                  <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password" %>
+                  <%= f.password_field :password, autocomplete: "current-password", class: "form-control bg-secondary-subtle", placeholder: "Password" %>
                 </div>
                 <%= f.submit "Log in", class: "btn btn-primary me-2 mb-2 mb-md-0 text-white" %>
               <% end %>
