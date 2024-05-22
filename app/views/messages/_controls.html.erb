@@ -1,1 +1,5 @@
-<%= link_to 'Delete', message_path(message), method: :delete, data: { confirm: 'Are you sure?', turbo_method: :delete } %>
+<%= link_to message_path(message), method: :delete, data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-danger btn-small' do %>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 5h4a.5.5 0 0 1 .5.5V12a.5.5 0 0 1-.5.5H6a.5.5 0 0 1-.5-.5V5.5zM3.5 3a.5.5 0 0 0-.5.5V4h10v-.5a.5.5 0 0 0-.5-.5h-9zM4.118 4L4 13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1L11.882 4H4.118zM6.5 2a1 1 0 0 0-1 1v1h5V3a1 1 0 0 0-1-1h-3z"/>
+  </svg>
+<% end %>

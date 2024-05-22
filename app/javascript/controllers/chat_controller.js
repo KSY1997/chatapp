@@ -30,20 +30,6 @@ export default class extends Controller {
     });
   }
 
-  // Set up an observer to style messages
-  setupMessageListener() {
-    this.styleExistingMessages();
-
-    this.messageObserver = new MutationObserver((mutations) => {
-      this.styleAddedNodes(mutations);
-    });
-
-    this.messageObserver.observe(this.element, {
-      childList: true,
-      subtree: true,
-    });
-  }
-
   // Scroll to the bottom of the chatbox
   scrollToBottom() {
     this.element.scrollTop = this.element.scrollHeight;
@@ -68,32 +54,8 @@ export default class extends Controller {
     });
   }
 
-  // Style a message node
-  styleMessage(node) {
-    let messageNode = this.getMessageNode(node);
-    if (!messageNode) return;
-
-    const userId = messageNode.dataset.userId;
-    const messageBody = messageNode.querySelector(".message__body");
-
-    this.applyStyle(userId, messageBody);
-  }
-
   // Get the message node from a node
   getMessageNode(node) {
     return node.closest(".message") || node.querySelector(".message");
-  }
-
-  // Apply style to a message body
-  applyStyle(userId, messageBody) {
-    if (userId === this.currentUserIdValue) {
-      messageBody.classList.add("bg-themeColorMain", "text-textColorSecondary");
-    } else {
-      messageBody.classList.add(
-        "border",
-        "border-themeColorMain",
-        "text-textColorMain"
-      );
-    }
   }
 }

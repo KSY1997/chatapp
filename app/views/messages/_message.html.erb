@@ -1,21 +1,17 @@
 <%= turbo_frame_tag dom_id(message) do %>
-  <div class="message" data-user-id="<%= message.user.id %>">
-    <div class="messages">
-      <div class="message-item me">
-        <%= message.user.username %>
-      </div>
-      <div>
+  <div class="message-item">
+    <div class="content">
+      <div class="message">
+        <div class="bubble">
+          <%= message.body %>
+          <%= turbo_frame_tag [dom_id(message), "controls"] do %>
+            <% if display_controls %>
+              <%= render partial: "messages/controls", locals: { message: message } %>
+            <% end %>
+          <% end %>
+        </div>
         <%= message.created_at.strftime("%H:%M") %>
       </div>
-
-      <%= turbo_frame_tag [dom_id(message), "controls"] do %>
-        <% if display_controls %>
-          <%= render partial: "messages/controls", locals: { message: message } %>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="bubble">
-      <%= message.body %>
     </div>
   </div>
 <% end %>
