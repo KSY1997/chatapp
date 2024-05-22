@@ -1,0 +1,10 @@
+/* Custom CSS */
+.btn-small {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.875rem;
+}
+
+.btn-small svg, .btn-small i {
+  width: 16px;
+  height: 16px;
+}
