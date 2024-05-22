@@ -8,3 +8,14 @@
   width: 16px;
   height: 16px;
 }
+
+.chatbox {
+  background-color: #140c27;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.chatbox-form {
+  background-color: #140c27;
+}

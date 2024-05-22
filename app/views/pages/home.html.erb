@@ -9,11 +9,11 @@
         </div>
       </div>
       <div class="card mt-3">
-        <div class="card-body">
+        <div class="card-body chatbox">
           <div class="row">
             <div class="col chat-content">
               <%= render partial: "messages/chatbox", locals: { messages: @messages } %>
-              <%= render partial: "messages/form", locals: { message: @message } %>
+              <%= render partial: "messages/form", locals: { message: @message, current_user: @current_user } %>
             </div>
           </div>        
         </div>
