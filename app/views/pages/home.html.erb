@@ -1,21 +1,17 @@
 <%= turbo_stream_from dom_id(current_user) %>
 <div class="container">
   <div class="chat-wrapper">
-    <div class="col-md-12">
-      <div class=text-center>
-        <div class="text-light">
-          <h1 class="mt-5">Chatroom</h1>
-          <p class=>Welcome <%= current_user.username %>!</p>
+    <div class="text-center text-light">
+      <h1 class="mt-5">Chatroom</h1>
+      <p class=>Welcome <%= current_user.username %>!</p>
+    </div>
+    <div class="card mt-3">
+      <div class="card-body chatbox d-flex justify-content-end align-items-end">
+        <div class="chat-content">
+          <%= render partial: "messages/chatbox", locals: { messages: @messages } %>
         </div>
-      </div>
-      <div class="card mt-3">
-        <div class="card-body chatbox">
-          <div class="row">
-            <div class="col chat-content">
-              <%= render partial: "messages/chatbox", locals: { messages: @messages } %>
-              <%= render partial: "messages/form", locals: { message: @message, current_user: @current_user } %>
-            </div>
-          </div>        
+        <div class="w-100">
+          <%= render partial: "messages/form", locals: { message: @message, current_user: @current_user } %>
         </div>
       </div>
     </div>
