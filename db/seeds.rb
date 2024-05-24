@@ -17,10 +17,4 @@ User.create(username: "jane",
     email: "jane@doe.com",
     password: "password",
     password_confirmation: "password")
-
-# Create 50 messages
-50.times do
-    Message.create(
-        body: Faker::Lorem.sentence(word_count: 10),
-        user_id: rand(1..3))
-end
+    
